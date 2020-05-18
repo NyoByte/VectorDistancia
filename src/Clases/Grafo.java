@@ -39,4 +39,12 @@ public class Grafo {
             }
         }
     }
+
+    public Nodo[] getListaAdy() {
+        return listaAdy;
+    }
+
+    public void setListaAdy(Nodo[] listaAdy) {
+        this.listaAdy = listaAdy;
+    }
 }
