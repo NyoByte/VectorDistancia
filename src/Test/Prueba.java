@@ -9,46 +9,6 @@ import ClasesNyo.*;
  */
 public class Prueba {
 
-    public static void bellmanFord(Grafo grafo, int n, int origen) {
-        int[] distancia = new int[n];
-        int[] predecesor = new int[n];
-        for (int i = 0; i < n; i++) {
-            //Inicializamos las distancias en infinito
-            distancia[i] = 1000;
-            predecesor[i] = -1;
-        }
-        //El nodo origen tiene distancia 0
-        distancia[origen] = 0;
-
-        //Numero de relajaciones = vertices - 1
-        for (int i = 0; i < n - 1; i++) {
-            //Iteramos por cada lado del grafo
-            for (int j = 0; j < n; j++) {
-                Nodo temp = grafo.getListaAdy()[j];
-                while (temp != null) {
-                    if (distancia[temp.getY()] > distancia[temp.getX()] + temp.getPeso()) {
-                        distancia[temp.getY()] = distancia[temp.getX()] + temp.getPeso();
-                        predecesor[temp.getY()] = temp.getX();
-                    }
-                    temp = temp.getSig();
-                }
-            }
-        }
-        //Comprobamos si hay ciclos negativos
-        for (int i = 0; i < n; i++) {
-            Nodo temp = grafo.getListaAdy()[i];
-            while (temp != null) {
-                if (distancia[temp.getY()] > distancia[temp.getX()] + temp.getPeso()) {
-                    System.out.println("Hay ciclo negativo");
-                }
-                temp = temp.getSig();
-            }
-        }
-        //Viendo resultados
-        for (int i = 0; i < n; i++) {
-            System.out.print(distancia[i] + "\t");
-        }
-    }
 
     public static void main(String[] args) {
         // TODO code application logic here
@@ -59,13 +19,12 @@ public class Prueba {
         grafo.agregarLado(1, 2, 2);
         grafo.agregarLado(2, 3, 5);
         grafo.mostrarLados();
+        VectorDistancia vd = new VectorDistancia(grafo);
+        vd.inicializarMatrices();
+        //vd.mostrarMatrices();
+        vd.ejecutarVector();
 
-        int origen = 0;
-        for (int i = 0; i < n; i++) {
-            System.out.println("Origen = " + i);
-            bellmanFord(grafo, n, i);
-            System.out.println("\n");
-        }
+        /*
         System.out.println("======PRUEBAS NYO======");
         System.out.println("FALTA BELLMAN-FORD Y QUE SEA NO DIRIGIDO");
         GrafoLista g = new GrafoLista();
@@ -81,8 +40,7 @@ public class Prueba {
         g.AgregarArco(v1, v3, 23);
         g.AgregarArco(v2, v3, 2);
         g.AgregarArco(v3, v4, 5);
-        g.MostrarGrafo();
+        g.MostrarGrafo();*/
 
     }
-
 }

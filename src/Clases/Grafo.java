@@ -47,4 +47,12 @@ public class Grafo {
     public void setListaAdy(Nodo[] listaAdy) {
         this.listaAdy = listaAdy;
     }
+
+    public int getN() {
+        return n;
+    }
+
+    public void setN(int n) {
+        this.n = n;
+    }
 }
