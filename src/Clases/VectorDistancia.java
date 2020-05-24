@@ -38,17 +38,20 @@ public class VectorDistancia {
         for(int i=0; i<n-1; i++){
             //Calculamos en cada paso i el vector distancia de cada router
             System.out.println("T = " + i);
-            for(int j=0; j<matrizDistancia.length; j++){
-                for(int u=0; u<listaAdy.length; u++){
-                    Nodo temp = listaAdy[u];
+            for(int v=0; v<matrizDistancia.length; v++){//Para cada router:
+                    Nodo temp = listaAdy[v];
+                    //Recorremos solo los lados conectados al router v
                     while(temp != null){
-                        if(matrizDistancia[j][temp.getX()] + temp.getPeso() < matrizDistancia[j][temp.getY()]){
-                            matrizDistancia[j][temp.getY()] = matrizDistancia[j][temp.getX()] + temp.getPeso();
-                            matrizSgteSalto[j][temp.getY()] = temp.getX();
+                        for(int w=0; w<matrizDistancia[temp.getY()].length; w++){
+                            //Recorremos el vector distancia unicamente de los routers conectados al router v
+                            if(temp.getPeso() + matrizDistancia[temp.getY()][w] < matrizDistancia[v][w]){
+                                //Si encontramos una ruta menor a traves de un router conectado al router v, actualizamos el vector distancia
+                                matrizDistancia[v][w] = temp.getPeso() + matrizDistancia[temp.getY()][w];
+                                matrizSgteSalto[v][w] = temp.getY();
+                            }
                         }
                         temp = temp.getSig();
                     }
-                }
             }
             //Opcional: mostrar vectores en el tiempo i
             mostrarMatrices();
