@@ -2,6 +2,7 @@ package Test;
 
 import Clases.*;
 import ClasesNyo.*;
+import java.util.Scanner;
 
 /**
  *
@@ -12,17 +13,25 @@ public class Prueba {
 
     public static void main(String[] args) {
         // TODO code application logic here
-        int n = 4;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el número de routers:");
+        int n = sc.nextInt();
+        //int n = 4;
         Grafo grafo = new Grafo(n);
-        grafo.agregarLado(0, 1, 3);
-        grafo.agregarLado(0, 2, 23);
-        grafo.agregarLado(1, 2, 2);
-        grafo.agregarLado(2, 3, 5);
+        /*L1=0,1,3
+          L2=0,2,23
+          L3=1,2,2
+          L4=2,3,5  */
+        /*grafo.agregarLado();
+        grafo.agregarLado();
+        grafo.agregarLado();
+        grafo.agregarLado();
         grafo.mostrarLados();
         VectorDistancia vd = new VectorDistancia(grafo);
         vd.inicializarMatrices();
-        //vd.mostrarMatrices();
         vd.ejecutarVector();
+        System.out.println("-------------------");*/
+        //vd.mostrarMatrices();
 
         /*
         System.out.println("======PRUEBAS NYO======");

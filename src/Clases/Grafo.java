@@ -1,5 +1,7 @@
 package Clases;
 
+import java.util.Scanner;
+
 public class Grafo {
     private int n; //numero de vertices
     private Nodo[] listaAdy;
@@ -14,7 +16,8 @@ public class Grafo {
         Nodo temp = new Nodo(x, y, peso);
         temp.setSig(listaAdy[x]);
         listaAdy[x] = temp;
-        Nodo temp2 = new Nodo(y,x, peso);
+        
+        Nodo temp2 = new Nodo(y, x, peso);
         temp2.setSig(listaAdy[y]);
         listaAdy[y] = temp2;
     }
@@ -22,7 +25,7 @@ public class Grafo {
     public Nodo obtenerLado(int x, int y){
         Nodo temp = listaAdy[x];
         while(temp != null){
-            if(temp.getY() == y){
+            if(temp.getDestino() == y){
                 break;
             }
             temp = temp.getSig();
@@ -34,7 +37,7 @@ public class Grafo {
         for(int i=0; i<listaAdy.length; i++){
             Nodo temp = listaAdy[i];
             while(temp != null){
-                System.out.println("(" + temp.getX() + "," +temp.getY()+"): " + temp.getPeso());
+                System.out.println("(" + temp.getOrigen() + "," +temp.getDestino()+"): " + temp.getPeso());
                 temp = temp.getSig();
             }
         }
