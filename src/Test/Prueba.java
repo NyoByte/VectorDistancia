@@ -12,12 +12,13 @@ public class Prueba {
 
 
     public static void main(String[] args) {
+        System.out.println("hola soy el roier");
         // TODO code application logic here
-        Scanner sc = new Scanner(System.in);
+       /* Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el número de routers:");
         int n = sc.nextInt();
         //int n = 4;
-        Grafo grafo = new Grafo(n);
+        Grafo grafo = new Grafo(n);*/
         /*L1=0,1,3
           L2=0,2,23
           L3=1,2,2

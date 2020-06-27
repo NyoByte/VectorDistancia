@@ -2,6 +2,7 @@ package ClasesNyo;
 
 public class ListaAdyacencia {
 
+    
     private Object item;
     private ListaAdyacencia sublista;
     private int peso;
