@@ -5,6 +5,10 @@
  */
 package Gráfica.Topologias;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Nazgul
@@ -16,6 +20,10 @@ public class Topologia2 extends javax.swing.JFrame {
      */
     public Topologia2() {
         initComponents();
+         ImageIcon imagen = new ImageIcon(getClass().getResource("/imagenes/topología2.JPG"));
+        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(this.topología2.getWidth(), 
+                topología2.getHeight(), Image.SCALE_DEFAULT));
+        topología2.setIcon(icono);
     }
 
     /**
@@ -28,6 +36,7 @@ public class Topologia2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        topología2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,15 +48,22 @@ public class Topologia2 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addComponent(jLabel1)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(topología2, javax.swing.GroupLayout.PREFERRED_SIZE, 669, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(512, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(0, 283, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(topología2, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 29, Short.MAX_VALUE))
         );
 
         pack();
@@ -91,5 +107,6 @@ public class Topologia2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel topología2;
     // End of variables declaration//GEN-END:variables
 }
