@@ -12,7 +12,6 @@ public class Prueba {
 
 
     public static void main(String[] args) {
-        System.out.println("hola soy el roier");
         // TODO code application logic here
        /* Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el número de routers:");
