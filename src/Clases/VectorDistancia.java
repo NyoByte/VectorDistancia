@@ -1,5 +1,7 @@
 package Clases;
 
+import javax.swing.JOptionPane;
+
 public class VectorDistancia {
     private int matrizDistancia[][];
     private int matrizSgteSalto[][];
@@ -30,6 +32,8 @@ public class VectorDistancia {
             for (int j = 0; j < n; j++) {
                 System.out.println(j + "       " + matrizDistancia[i][j] + "       "
                         + matrizSgteSalto[i][j]);
+                //JOptionPane.showMessageDialog(null, j + "       " + matrizDistancia[i][j] + "       "
+                      //  + matrizSgteSalto[i][j]);
             }
         }
     }

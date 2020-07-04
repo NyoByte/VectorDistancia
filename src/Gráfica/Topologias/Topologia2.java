@@ -5,6 +5,8 @@
  */
 package Gráfica.Topologias;
 
+import Clases.*;
+import Gráfica.ScreenMain;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -18,12 +20,52 @@ public class Topologia2 extends javax.swing.JFrame {
     /**
      * Creates new form Topologia1
      */
+    
+    public Grafo grafo;
     public Topologia2() {
         initComponents();
          ImageIcon imagen = new ImageIcon(getClass().getResource("/imagenes/topología2.JPG"));
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(this.topología2.getWidth(), 
-                topología2.getHeight(), Image.SCALE_DEFAULT));
+        topología2.getHeight(), Image.SCALE_DEFAULT));
         topología2.setIcon(icono);
+            transparente();
+        //poner la interfaz en el centro
+        this.setLocationRelativeTo(null);
+    }
+    
+    public void transparente(){
+        //esta funcion se crea con el fin de modificar el boton a invisible
+        this.siguiente.setOpaque(false);
+        this.siguiente.setContentAreaFilled(false);
+        this.siguiente.setBorderPainted(false);
+        ImageIcon imagen_siguiente = new ImageIcon(getClass().getResource("/imagenes/siguiente.png"));
+        Icon icono_siguiente = new ImageIcon(imagen_siguiente.getImage().getScaledInstance(this.siguiente.getWidth(), 
+        siguiente.getHeight(), Image.SCALE_DEFAULT));
+        siguiente.setIcon(icono_siguiente);
+        
+        this.anterior.setOpaque(false);
+        this.anterior.setContentAreaFilled(false);
+        this.anterior.setBorderPainted(false);
+        ImageIcon imagen_anterior = new ImageIcon(getClass().getResource("/imagenes/anterior.png"));
+        Icon icono_anterior = new ImageIcon(imagen_anterior.getImage().getScaledInstance(this.anterior.getWidth(), 
+        anterior.getHeight(), Image.SCALE_DEFAULT));
+        anterior.setIcon(icono_anterior);
+        
+        this.router1.setContentAreaFilled(false);
+        this.router2.setOpaque(false);
+        this.router2.setContentAreaFilled(false);
+        this.router3.setOpaque(false);
+        this.router3.setContentAreaFilled(false);
+        this.router4.setOpaque(false);
+        this.router4.setContentAreaFilled(false);
+        this.router5.setOpaque(false);
+        this.router5.setContentAreaFilled(false);
+        this.router6.setOpaque(false);
+        this.router6.setContentAreaFilled(false);
+        this.router7.setOpaque(false);
+        this.router7.setContentAreaFilled(false);
+        this.router8.setOpaque(false);
+        this.router8.setContentAreaFilled(false);
     }
 
     /**
@@ -35,39 +77,140 @@ public class Topologia2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        router2 = new javax.swing.JButton();
+        router3 = new javax.swing.JButton();
+        router4 = new javax.swing.JButton();
+        router5 = new javax.swing.JButton();
+        router6 = new javax.swing.JButton();
+        router7 = new javax.swing.JButton();
+        router8 = new javax.swing.JButton();
+        router1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         topología2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        menu = new javax.swing.JButton();
+        crearTabla = new javax.swing.JButton();
+        siguiente = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        anterior = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(router2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 70, 70));
+        getContentPane().add(router3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 70, 70));
+        getContentPane().add(router4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 70, 70));
+        getContentPane().add(router5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 70, 70));
+        getContentPane().add(router6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 70, 70));
+        getContentPane().add(router7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, 70, 70));
+        getContentPane().add(router8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 360, 70, 70));
+        getContentPane().add(router1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 70, 70));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Topología 2");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 0, -1, -1));
+        getContentPane().add(topología2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 45, 669, 398));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(topología2, javax.swing.GroupLayout.PREFERRED_SIZE, 669, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(512, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addComponent(topología2, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 29, Short.MAX_VALUE))
-        );
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 420, 310));
+
+        menu.setText("Volver al menu principal");
+        menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, 210, -1));
+
+        crearTabla.setText("crear Tabla de Enrutamiento");
+        crearTabla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearTablaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(crearTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 410, 210, 30));
+
+        siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/siguiente.png"))); // NOI18N
+        siguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                siguienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 460, 60, 60));
+
+        jLabel2.setText("Topología 3");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 530, -1, -1));
+
+        anterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/anterior.png"))); // NOI18N
+        anterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                anteriorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(anterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 460, 70, 60));
+
+        jLabel3.setText("Topología 1");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 530, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+        ScreenMain menu = new ScreenMain();
+        menu.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_menuActionPerformed
+
+    private void crearTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearTablaActionPerformed
+        //está función existe con el fin de mostrar la tabla de enrutamiento
+        //se crea un grao y se pone de parametro 8 ya que serán 8 routers
+        grafo = new Grafo(8);
+
+        grafo.agregarLado(0, 1, 7);
+        grafo.agregarLado(0, 3, 8);
+        grafo.agregarLado(1, 2, 12);
+        grafo.agregarLado(2, 3, 12);
+        grafo.agregarLado(2, 4, 8);
+        grafo.agregarLado(2, 5, 15);
+        grafo.agregarLado(2, 7, 14);
+        grafo.agregarLado(4, 6, 6);
+        grafo.agregarLado(5, 6, 15);
+        grafo.agregarLado(6, 7, 22);
+
+        grafo.mostrarLados();
+        VectorDistancia vt = new VectorDistancia(grafo);
+
+        vt.inicializarMatrices();
+        vt.ejecutarVector();
+
+    }//GEN-LAST:event_crearTablaActionPerformed
+
+    private void siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteActionPerformed
+        Topologia3 topo3 = new Topologia3();
+        topo3.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_siguienteActionPerformed
+
+    private void anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anteriorActionPerformed
+        Topologia1 topo1 = new Topologia1();
+        topo1.setVisible(true);
+        this.dispose();
+                        
+    }//GEN-LAST:event_anteriorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,7 +249,23 @@ public class Topologia2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton anterior;
+    private javax.swing.JButton crearTabla;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JButton menu;
+    private javax.swing.JButton router1;
+    private javax.swing.JButton router2;
+    private javax.swing.JButton router3;
+    private javax.swing.JButton router4;
+    private javax.swing.JButton router5;
+    private javax.swing.JButton router6;
+    private javax.swing.JButton router7;
+    private javax.swing.JButton router8;
+    private javax.swing.JButton siguiente;
     private javax.swing.JLabel topología2;
     // End of variables declaration//GEN-END:variables
 }

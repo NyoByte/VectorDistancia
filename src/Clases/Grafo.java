@@ -1,6 +1,8 @@
 package Clases;
 
+import Gráfica.ScreenMain;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Grafo {
     private int n; //numero de vertices
@@ -34,9 +36,13 @@ public class Grafo {
     }
 
     public void mostrarLados(){
+        //ScreenMain menu = new ScreenMain();
+        
         for(int i=0; i<listaAdy.length; i++){
             Nodo temp = listaAdy[i];
             while(temp != null){
+                //JOptionPane.showMessageDialog(null, "(" + temp.getOrigen() + "," +temp.getDestino()+"): " + temp.getPeso());
+                
                 System.out.println("(" + temp.getOrigen() + "," +temp.getDestino()+"): " + temp.getPeso());
                 temp = temp.getSig();
             }

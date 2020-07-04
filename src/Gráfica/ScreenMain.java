@@ -7,10 +7,12 @@ package Gráfica;
 
 import Clases.*;
 import Gráfica.Topologias.*;
-import Gráfica.Topologias.Topologia1;
+import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -31,6 +33,13 @@ public class ScreenMain extends javax.swing.JFrame {
         Iniciar();
         cantMax = Integer.parseInt(cantRouter.getText()); 
         grafo = new Grafo(cantMax);
+        this.setLocationRelativeTo(null);
+        ImageIcon imagen = new ImageIcon(getClass().getResource("/imagenes/logo.png"));
+        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_DEFAULT));
+        logo.setIcon(icono);
+        logo1.setIcon(icono);
+        
+        
     }
     
     public void Iniciar(){
@@ -79,11 +88,16 @@ public class ScreenMain extends javax.swing.JFrame {
         cantRouter = new javax.swing.JTextField();
         Button_Añadir = new javax.swing.JButton();
         Button_GO = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        logo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        topologia1 = new javax.swing.JButton();
+        topologia2 = new javax.swing.JButton();
+        topologia3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        logo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,7 +115,9 @@ public class ScreenMain extends javax.swing.JFrame {
             }
         });
 
-        Button_Añadir.setText("Añadir");
+        Button_Añadir.setBackground(new java.awt.Color(0, 153, 255));
+        Button_Añadir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Button_Añadir.setText("Añadir Router");
         Button_Añadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_AñadirActionPerformed(evt);
@@ -113,99 +129,153 @@ public class ScreenMain extends javax.swing.JFrame {
             }
         });
 
-        Button_GO.setText("GO");
+        Button_GO.setBackground(new java.awt.Color(0, 153, 255));
+        Button_GO.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Button_GO.setText("Ejecutar vector Distancia");
         Button_GO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_GOActionPerformed(evt);
             }
         });
 
+        jTextArea1.setBackground(new java.awt.Color(204, 204, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Integrantes:\n-Claudia Barrera\n-Gabriel Carmelo\n-Andy Lazo\n-Roger Vega");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setText("Proyecto de Redes de computadoras 2020_2");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(Button_Añadir))
-                .addGap(18, 18, 18)
+                .addComponent(Button_Añadir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(Button_GO)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(40, 40, 40))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cantRouter, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Button_GO))
-                .addContainerGap(146, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(cantRouter, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(cantRouter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Button_Añadir)
+                    .addComponent(Button_Añadir, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button_GO, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10))
         );
 
         jTabbedPane1.addTab("Ingresar Topología", jPanel1);
 
-        jButton2.setText("Topologia1");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        topologia1.setBackground(new java.awt.Color(0, 153, 255));
+        topologia1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        topologia1.setText("Topologia1");
+        topologia1.setMaximumSize(new java.awt.Dimension(140, 30));
+        topologia1.setMinimumSize(new java.awt.Dimension(140, 30));
+        topologia1.setPreferredSize(new java.awt.Dimension(140, 30));
+        topologia1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                topologia1ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Topologia2");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        topologia2.setBackground(new java.awt.Color(0, 153, 255));
+        topologia2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        topologia2.setText("Topologia2");
+        topologia2.setMaximumSize(new java.awt.Dimension(140, 30));
+        topologia2.setMinimumSize(new java.awt.Dimension(140, 30));
+        topologia2.setPreferredSize(new java.awt.Dimension(140, 30));
+        topologia2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                topologia2ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Topologia3");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        topologia3.setBackground(new java.awt.Color(0, 153, 255));
+        topologia3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        topologia3.setText("Topologia3");
+        topologia3.setMaximumSize(new java.awt.Dimension(140, 30));
+        topologia3.setMinimumSize(new java.awt.Dimension(140, 30));
+        topologia3.setPreferredSize(new java.awt.Dimension(140, 30));
+        topologia3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                topologia3ActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Topologia4");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setText("Proyecto de Redes de computadoras 2020_2");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton4))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3)
-                    .addComponent(jButton5))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel3)
+                        .addGap(0, 43, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(topologia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(topologia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(topologia3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(104, 104, 104)))
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(133, 133, 133)
+                .addComponent(logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel3)
+                .addGap(44, 44, 44)
+                .addComponent(logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addGap(49, 49, 49)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
-                .addContainerGap(55, Short.MAX_VALUE))
+                    .addComponent(topologia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(topologia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(87, 87, 87)
+                .addComponent(topologia3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
         );
 
         jTabbedPane1.addTab("Topologías Precargadas", jPanel2);
@@ -221,7 +291,9 @@ public class ScreenMain extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         pack();
@@ -287,36 +359,32 @@ public class ScreenMain extends javax.swing.JFrame {
         grafo.mostrarLados();
         VectorDistancia vd = new VectorDistancia(grafo);
         vd.inicializarMatrices();
+        
         vd.ejecutarVector();
         System.out.println("-------------------------");
     }//GEN-LAST:event_Button_GOActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void topologia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_topologia1ActionPerformed
        
+            //nos ayuda a ir a la ventana de, en este caso, topologiá
            Topologia1 topo1 = new Topologia1();
            topo1.setVisible(true);
            this.dispose();
            
        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_topologia1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void topologia2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_topologia2ActionPerformed
         Topologia2 topo2 = new Topologia2();
            topo2.setVisible(true);
            this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_topologia2ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void topologia3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_topologia3ActionPerformed
         Topologia3 topo3 = new Topologia3();
            topo3.setVisible(true);
            this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Topologia4 topo4 = new Topologia4();
-           topo4.setVisible(true);
-           this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_topologia3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,13 +426,18 @@ public class ScreenMain extends javax.swing.JFrame {
     private javax.swing.JButton Button_Añadir;
     private javax.swing.JButton Button_GO;
     private javax.swing.JTextField cantRouter;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel logo;
+    private javax.swing.JLabel logo1;
+    private javax.swing.JButton topologia1;
+    private javax.swing.JButton topologia2;
+    private javax.swing.JButton topologia3;
     // End of variables declaration//GEN-END:variables
 }
