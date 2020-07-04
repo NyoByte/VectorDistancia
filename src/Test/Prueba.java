@@ -30,7 +30,7 @@ public class Prueba {
         VectorDistancia vd = new VectorDistancia(grafo);
         vd.inicializarMatrices();
         vd.ejecutarVector();
-        System.out.println("-------------------");*/
+        System.out.println("-------------------");
         //vd.mostrarMatrices();
 
         /*

@@ -117,7 +117,7 @@ public class ScreenMain extends javax.swing.JFrame {
 
         Button_Añadir.setBackground(new java.awt.Color(0, 153, 255));
         Button_Añadir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        Button_Añadir.setText("Añadir Router");
+        Button_Añadir.setText("Añadir enlace");
         Button_Añadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_AñadirActionPerformed(evt);
@@ -326,8 +326,8 @@ public class ScreenMain extends javax.swing.JFrame {
         Object[] message = {
             "Ingrese los siguientes valores:\n\n",
             "",
-            "Router1: ", r1t,
-            "Router2: ", r2t,
+            "Desde router: ", r1t,
+            "Hacia router: ", r2t,
             "Peso: ", pesot,
         };
         int option = JOptionPane.showConfirmDialog(null, message, "Añadiendo conexión... ", JOptionPane.OK_CANCEL_OPTION);
@@ -362,6 +362,8 @@ public class ScreenMain extends javax.swing.JFrame {
         
         vd.ejecutarVector();
         System.out.println("-------------------------");
+        TablaEnrutamientoRouter ventanaTabla = new TablaEnrutamientoRouter(vd.getMatrizDistancia(),vd.getMatrizSgteSalto());
+        ventanaTabla.setVisible(true);
     }//GEN-LAST:event_Button_GOActionPerformed
 
     private void topologia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_topologia1ActionPerformed

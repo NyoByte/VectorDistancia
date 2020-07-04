@@ -61,7 +61,20 @@ public class VectorDistancia {
             System.out.println("--------------");
             System.out.println("T = " + i+"\n");
             mostrarMatrices();
-            
         }
     }
+
+    public int[][] getMatrizDistancia() {
+        return matrizDistancia;
+    }
+
+    public int[][] getMatrizSgteSalto() {
+        return matrizSgteSalto;
+    }
+
+    public int getN(){
+        return n;
+    }
+    
+    
 }
