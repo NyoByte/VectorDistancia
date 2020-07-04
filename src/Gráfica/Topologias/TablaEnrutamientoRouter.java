@@ -35,10 +35,8 @@ public class TablaEnrutamientoRouter extends javax.swing.JFrame {
     }
     
     public void llenarTabla(){
-        System.out.println(modelo.getRowCount());
         while(modelo.getRowCount()>0){
             modelo.removeRow(0);
-            System.out.println(modelo.getRowCount());
         }
         String[] fila = new String[3];
         for(int i=0; i<tam; i++){
