@@ -87,8 +87,6 @@ public class Topologia2 extends javax.swing.JFrame {
         router1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         topología2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         menu = new javax.swing.JButton();
         crearTabla = new javax.swing.JButton();
         siguiente = new javax.swing.JButton();
@@ -112,28 +110,13 @@ public class Topologia2 extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 0, -1, -1));
         getContentPane().add(topología2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 45, 669, 398));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 420, 310));
-
         menu.setText("Volver al menu principal");
         menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuActionPerformed(evt);
             }
         });
-        getContentPane().add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, 210, -1));
+        getContentPane().add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 170, 210, -1));
 
         crearTabla.setText("crear Tabla de Enrutamiento");
         crearTabla.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +124,7 @@ public class Topologia2 extends javax.swing.JFrame {
                 crearTablaActionPerformed(evt);
             }
         });
-        getContentPane().add(crearTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 410, 210, 30));
+        getContentPane().add(crearTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 220, 210, 30));
 
         siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/siguiente.png"))); // NOI18N
         siguiente.addActionListener(new java.awt.event.ActionListener() {
@@ -149,10 +132,10 @@ public class Topologia2 extends javax.swing.JFrame {
                 siguienteActionPerformed(evt);
             }
         });
-        getContentPane().add(siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 460, 60, 60));
+        getContentPane().add(siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 300, 60, 60));
 
         jLabel2.setText("Topología 3");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 530, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 370, -1, -1));
 
         anterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/anterior.png"))); // NOI18N
         anterior.addActionListener(new java.awt.event.ActionListener() {
@@ -160,10 +143,10 @@ public class Topologia2 extends javax.swing.JFrame {
                 anteriorActionPerformed(evt);
             }
         });
-        getContentPane().add(anterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 460, 70, 60));
+        getContentPane().add(anterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 300, 70, 60));
 
         jLabel3.setText("Topología 1");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 530, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 370, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -191,11 +174,13 @@ public class Topologia2 extends javax.swing.JFrame {
         grafo.agregarLado(5, 6, 15);
         grafo.agregarLado(6, 7, 22);
 
-        grafo.mostrarLados();
+        //grafo.mostrarLados();
         VectorDistancia vt = new VectorDistancia(grafo);
 
         vt.inicializarMatrices();
         vt.ejecutarVector();
+          TablaEnrutamientoRouter ventana = new TablaEnrutamientoRouter(vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        ventana.setVisible(true);
 
     }//GEN-LAST:event_crearTablaActionPerformed
 
@@ -239,6 +224,12 @@ public class Topologia2 extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -254,8 +245,6 @@ public class Topologia2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton menu;
     private javax.swing.JButton router1;
     private javax.swing.JButton router2;

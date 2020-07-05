@@ -11,6 +11,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -21,7 +22,11 @@ public class Topologia1 extends javax.swing.JFrame {
     /**
      * Creates new form Topologia1
      */
-    
+        /*DefaultTableModel modelo;   
+    private int[][] distancias;
+    private int[][] saltos;
+    private int router = 0;
+    private int tam;*/
     public Grafo grafo;
     public Topologia1() {
         initComponents();
@@ -66,6 +71,48 @@ public class Topologia1 extends javax.swing.JFrame {
         siguiente.getHeight(), Image.SCALE_DEFAULT));
         siguiente.setIcon(icono_siguiente);
     }
+    
+    
+    
+
+
+   /* public Topologia1(int[][] distancias, int[][] saltos) {
+        this.distancias = distancias;
+        this.saltos = saltos;
+        this.tam = distancias.length;
+        initComponents();
+        modelo = new DefaultTableModel();
+        modelo.addColumn("Hacia router");
+        modelo.addColumn("Distancia");
+        modelo.addColumn("Siguiente salto");
+        jTable1.setModel(modelo);
+        this.llenarTabla();
+    }*/
+    
+    /*public void llenarTabla(int num, int[][] distancias, int[][] saltos){
+         this.distancias = distancias;
+        this.saltos = saltos;
+        this.tam = distancias.length;
+        initComponents();
+        modelo = new DefaultTableModel();
+        modelo.addColumn("Hacia router");
+        modelo.addColumn("Distancia");
+        modelo.addColumn("Siguiente salto");
+        jTable1.setModel(modelo);
+        System.out.println(modelo.getRowCount());
+        while(modelo.getRowCount()>0){
+            modelo.removeRow(0);
+            System.out.println(modelo.getRowCount());
+        }
+        String[] fila = new String[3];
+        
+            fila[0] = String.valueOf(num);
+            fila[1] = String.valueOf(distancias[router][num]);
+            fila[2] = String.valueOf(saltos[router][num]);
+            modelo.addRow(fila);
+        
+        this.jTable1.setModel(modelo);
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -86,10 +133,8 @@ public class Topologia1 extends javax.swing.JFrame {
         router7 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         topología1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         siguiente = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
@@ -117,20 +162,13 @@ public class Topologia1 extends javax.swing.JFrame {
         getContentPane().add(topología1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 670, 430));
         topología1.getAccessibleContext().setAccessibleName("topología1");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        jButton2.setText("Volver al menu principal");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 420, 310));
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 210, -1));
 
         jButton1.setText("crear Tabla de Enrutamiento");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -138,15 +176,7 @@ public class Topologia1 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 410, 210, 30));
-
-        jButton2.setText("Volver al menu principal");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, 210, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, 210, 30));
 
         siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/siguiente.png"))); // NOI18N
         siguiente.addActionListener(new java.awt.event.ActionListener() {
@@ -154,23 +184,17 @@ public class Topologia1 extends javax.swing.JFrame {
                 siguienteActionPerformed(evt);
             }
         });
-        getContentPane().add(siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 460, 60, 60));
+        getContentPane().add(siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 320, 60, 60));
 
         jLabel2.setText("Topología 2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 530, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void router1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_router1ActionPerformed
-        JOptionPane.showMessageDialog(null, "hola");
-    }//GEN-LAST:event_router1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//está función existe con el fin de mostrar la tabla de enrutamiento        
-//se crea un grao y se pone de parametro 8 ya que serán 8 routers
+       // JOptionPane.showMessageDialog(null, "hola");
         grafo = new Grafo(8);
-        
         grafo.agregarLado(0, 1, 4);
         grafo.agregarLado(0, 2, 5);
         grafo.agregarLado(1, 3, 7);
@@ -184,10 +208,39 @@ public class Topologia1 extends javax.swing.JFrame {
         
         
         grafo.mostrarLados();
+        VectorDistancia vt = new VectorDistancia(grafo); 
+        
+        vt.inicializarMatrices();
+        vt.ejecutarVector();
+        //TablaEnrutamientoRouter ventana = new TablaEnrutamientoRouter(vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        //llenarTabla(1,vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        
+    }//GEN-LAST:event_router1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+//está función existe con el fin de mostrar la tabla de enrutamiento  
+        grafo = new Grafo(8);
+        grafo.agregarLado(0, 1, 4);
+        grafo.agregarLado(0, 2, 5);
+        grafo.agregarLado(1, 3, 7);
+        grafo.agregarLado(2, 3, 3);
+        grafo.agregarLado(2, 5, 2);
+        grafo.agregarLado(3, 4, 1);
+        grafo.agregarLado(3, 6, 4);
+        grafo.agregarLado(4, 5, 3);
+        grafo.agregarLado(5, 7, 2);
+        grafo.agregarLado(7, 6, 2);
+        
+        
+        //grafo.mostrarLados();
         VectorDistancia vt = new VectorDistancia(grafo);
         
         vt.inicializarMatrices();
         vt.ejecutarVector();
+        TablaEnrutamientoRouter ventana = new TablaEnrutamientoRouter(vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        ventana.setVisible(true);
+//se crea un grao y se pone de parametro 8 ya que serán 8 routers
+    
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -230,6 +283,9 @@ public class Topologia1 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Topologia1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -244,8 +300,6 @@ public class Topologia1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton router1;
     private javax.swing.JButton router2;
     private javax.swing.JButton router3;

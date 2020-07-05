@@ -76,8 +76,6 @@ public class Topologia3 extends javax.swing.JFrame {
         router5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         topología3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         menu = new javax.swing.JButton();
         crearTabla = new javax.swing.JButton();
         anterior = new javax.swing.JButton();
@@ -112,28 +110,13 @@ public class Topologia3 extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 0, -1, -1));
         getContentPane().add(topología3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 710, 470));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, 420, 310));
-
         menu.setText("Volver al menu principal");
         menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuActionPerformed(evt);
             }
         });
-        getContentPane().add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 370, 210, -1));
+        getContentPane().add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 210, 210, -1));
 
         crearTabla.setText("crear Tabla de Enrutamiento");
         crearTabla.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +124,7 @@ public class Topologia3 extends javax.swing.JFrame {
                 crearTablaActionPerformed(evt);
             }
         });
-        getContentPane().add(crearTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 410, 210, 30));
+        getContentPane().add(crearTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, 210, 30));
 
         anterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/anterior.png"))); // NOI18N
         anterior.addActionListener(new java.awt.event.ActionListener() {
@@ -149,10 +132,10 @@ public class Topologia3 extends javax.swing.JFrame {
                 anteriorActionPerformed(evt);
             }
         });
-        getContentPane().add(anterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 460, 70, 60));
+        getContentPane().add(anterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 320, 70, 60));
 
         jLabel3.setText("Topología 2");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 530, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 390, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -185,6 +168,8 @@ public class Topologia3 extends javax.swing.JFrame {
 
         vt.inicializarMatrices();
         vt.ejecutarVector();
+          TablaEnrutamientoRouter ventana = new TablaEnrutamientoRouter(vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        ventana.setVisible(true);
     }//GEN-LAST:event_crearTablaActionPerformed
 
     private void anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anteriorActionPerformed
@@ -223,6 +208,18 @@ public class Topologia3 extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -237,8 +234,6 @@ public class Topologia3 extends javax.swing.JFrame {
     private javax.swing.JButton crearTabla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton menu;
     private javax.swing.JButton router1;
     private javax.swing.JButton router2;
