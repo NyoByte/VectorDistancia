@@ -22,14 +22,25 @@ public class Topologia1 extends javax.swing.JFrame {
     /**
      * Creates new form Topologia1
      */
-        /*DefaultTableModel modelo;   
-    private int[][] distancias;
-    private int[][] saltos;
-    private int router = 0;
-    private int tam;*/
     public Grafo grafo;
+    public VectorDistancia vt;
     public Topologia1() {
         initComponents();
+        grafo = new Grafo(8);
+        grafo.agregarLado(0, 1, 4);
+        grafo.agregarLado(0, 2, 5);
+        grafo.agregarLado(1, 3, 7);
+        grafo.agregarLado(2, 3, 3);
+        grafo.agregarLado(2, 5, 2);
+        grafo.agregarLado(3, 4, 1);
+        grafo.agregarLado(3, 6, 4);
+        grafo.agregarLado(4, 5, 3);
+        grafo.agregarLado(5, 7, 2);
+        grafo.agregarLado(7, 6, 2);
+        vt = new VectorDistancia(grafo); 
+        vt.inicializarMatrices();
+        vt.ejecutarVector();
+        
         /*este codigo es usado para importar una imagen y almacenarlo en una 
         variable jlabel*/
         ImageIcon imagen = new ImageIcon(getClass().getResource("/imagenes/topología1.JPG"));
@@ -44,6 +55,8 @@ public class Topologia1 extends javax.swing.JFrame {
     
     public void transparente(){
         //esta funcion se crea con el fin de modificar el boton a invisible
+        this.router0.setOpaque(false);
+        this.router0.setContentAreaFilled(false);
         this.router1.setOpaque(false);
         this.router1.setContentAreaFilled(false);
         this.router2.setOpaque(false);
@@ -58,8 +71,6 @@ public class Topologia1 extends javax.swing.JFrame {
         this.router6.setContentAreaFilled(false);
         this.router7.setOpaque(false);
         this.router7.setContentAreaFilled(false);
-        this.router8.setOpaque(false);
-        this.router8.setContentAreaFilled(false);
         //------------------------------------------
         //esta funcion permite agregar el icono al boton siguiente
         this.siguiente.setOpaque(false);
@@ -123,14 +134,14 @@ public class Topologia1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        router0 = new javax.swing.JButton();
+        router4 = new javax.swing.JButton();
         router1 = new javax.swing.JButton();
         router5 = new javax.swing.JButton();
         router2 = new javax.swing.JButton();
-        router6 = new javax.swing.JButton();
-        router3 = new javax.swing.JButton();
-        router8 = new javax.swing.JButton();
-        router4 = new javax.swing.JButton();
         router7 = new javax.swing.JButton();
+        router3 = new javax.swing.JButton();
+        router6 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         topología1 = new javax.swing.JLabel();
         Button_Back = new javax.swing.JButton();
@@ -142,20 +153,62 @@ public class Topologia1 extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        router1.setBackground(new java.awt.Color(255, 255, 255));
+        router0.setBackground(new java.awt.Color(255, 255, 255));
+        router0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                router0ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(router0, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 90, 70));
+
+        router4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                router4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(router4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 90, 60));
+
         router1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 router1ActionPerformed(evt);
             }
         });
-        getContentPane().add(router1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 90, 70));
-        getContentPane().add(router5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 90, 60));
-        getContentPane().add(router2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 90, 60));
-        getContentPane().add(router6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 90, 60));
-        getContentPane().add(router3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 90, 60));
-        getContentPane().add(router8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 90, 60));
-        getContentPane().add(router4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 90, 60));
-        getContentPane().add(router7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 90, 60));
+        getContentPane().add(router1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 90, 60));
+
+        router5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                router5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(router5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 90, 60));
+
+        router2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                router2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(router2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 90, 60));
+
+        router7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                router7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(router7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 90, 60));
+
+        router3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                router3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(router3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 90, 60));
+
+        router6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                router6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(router6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 90, 60));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Topologia 1");
@@ -193,48 +246,14 @@ public class Topologia1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void router1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_router1ActionPerformed
-       // JOptionPane.showMessageDialog(null, "hola");
-        grafo = new Grafo(8);
-        grafo.agregarLado(0, 1, 4);
-        grafo.agregarLado(0, 2, 5);
-        grafo.agregarLado(1, 3, 7);
-        grafo.agregarLado(2, 3, 3);
-        grafo.agregarLado(2, 5, 2);
-        grafo.agregarLado(3, 4, 1);
-        grafo.agregarLado(3, 6, 4);
-        grafo.agregarLado(4, 5, 3);
-        grafo.agregarLado(5, 7, 2);
-        grafo.agregarLado(7, 6, 2);
+    private void router0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_router0ActionPerformed
+       tablaRouter ventana = new tablaRouter(0,vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        ventana.setVisible(true);
         
-        
-        grafo.mostrarLados();
-        VectorDistancia vt = new VectorDistancia(grafo); 
-        
-        vt.inicializarMatrices();
-        vt.ejecutarVector();
-        //TablaEnrutamientoRouter ventana = new TablaEnrutamientoRouter(vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
-        //llenarTabla(1,vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
-        
-    }//GEN-LAST:event_router1ActionPerformed
+    }//GEN-LAST:event_router0ActionPerformed
 
     private void Button_MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_MostrarActionPerformed
 //está función existe con el fin de mostrar la tabla de enrutamiento  
-        grafo = new Grafo(8);
-        grafo.agregarLado(0, 1, 4);
-        grafo.agregarLado(0, 2, 5);
-        grafo.agregarLado(1, 3, 7);
-        grafo.agregarLado(2, 3, 3);
-        grafo.agregarLado(2, 5, 2);
-        grafo.agregarLado(3, 4, 1);
-        grafo.agregarLado(3, 6, 4);
-        grafo.agregarLado(4, 5, 3);
-        grafo.agregarLado(5, 7, 2);
-        grafo.agregarLado(7, 6, 2);
-        
-        VectorDistancia vt = new VectorDistancia(grafo);
-        vt.inicializarMatrices();
-        vt.ejecutarVector();
         TablaEnrutamientoRouter ventana = new TablaEnrutamientoRouter(vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
         ventana.setVisible(true);
 //se crea un grafo y se pone de parametro 8 ya que serán 8 routers  
@@ -252,6 +271,41 @@ public class Topologia1 extends javax.swing.JFrame {
            topo2.setVisible(true);
            this.dispose();
     }//GEN-LAST:event_siguienteActionPerformed
+
+    private void router1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_router1ActionPerformed
+        tablaRouter ventana = new tablaRouter(1,vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        ventana.setVisible(true);
+    }//GEN-LAST:event_router1ActionPerformed
+
+    private void router2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_router2ActionPerformed
+        tablaRouter ventana = new tablaRouter(2,vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        ventana.setVisible(true);
+    }//GEN-LAST:event_router2ActionPerformed
+
+    private void router3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_router3ActionPerformed
+        tablaRouter ventana = new tablaRouter(3,vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        ventana.setVisible(true);
+    }//GEN-LAST:event_router3ActionPerformed
+
+    private void router4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_router4ActionPerformed
+        tablaRouter ventana = new tablaRouter(4,vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        ventana.setVisible(true);
+    }//GEN-LAST:event_router4ActionPerformed
+
+    private void router5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_router5ActionPerformed
+        tablaRouter ventana = new tablaRouter(5,vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        ventana.setVisible(true);
+    }//GEN-LAST:event_router5ActionPerformed
+
+    private void router6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_router6ActionPerformed
+        tablaRouter ventana = new tablaRouter(6,vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        ventana.setVisible(true);
+    }//GEN-LAST:event_router6ActionPerformed
+
+    private void router7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_router7ActionPerformed
+        tablaRouter ventana = new tablaRouter(7,vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
+        ventana.setVisible(true);
+    }//GEN-LAST:event_router7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,6 +350,7 @@ public class Topologia1 extends javax.swing.JFrame {
     private javax.swing.JButton Button_Mostrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton router0;
     private javax.swing.JButton router1;
     private javax.swing.JButton router2;
     private javax.swing.JButton router3;
@@ -303,7 +358,6 @@ public class Topologia1 extends javax.swing.JFrame {
     private javax.swing.JButton router5;
     private javax.swing.JButton router6;
     private javax.swing.JButton router7;
-    private javax.swing.JButton router8;
     private javax.swing.JButton siguiente;
     private javax.swing.JLabel topología1;
     // End of variables declaration//GEN-END:variables
