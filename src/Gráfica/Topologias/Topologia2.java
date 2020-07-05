@@ -23,6 +23,7 @@ public class Topologia2 extends javax.swing.JFrame {
     
     public Grafo grafo;
     public Topologia2() {
+        //123
         initComponents();
          ImageIcon imagen = new ImageIcon(getClass().getResource("/imagenes/topología2.JPG"));
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(this.topología2.getWidth(), 
