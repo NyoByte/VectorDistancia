@@ -58,9 +58,9 @@ public class VectorDistancia {
                     }
             }
             //Opcional: mostrar vectores en el tiempo i
-            System.out.println("--------------");
-            System.out.println("T = " + i+"\n");
-            mostrarMatrices();
+            //System.out.println("--------------");
+            //System.out.println("T = " + i+"\n");
+            //mostrarMatrices();
         }
     }
 
