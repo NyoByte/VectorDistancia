@@ -113,6 +113,7 @@ public class Topologia2 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Topología 2");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         router1.addActionListener(new java.awt.event.ActionListener() {

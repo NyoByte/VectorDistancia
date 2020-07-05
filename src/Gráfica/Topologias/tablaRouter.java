@@ -22,6 +22,7 @@ public class tablaRouter extends javax.swing.JFrame {
     private int tam;
     DefaultTableModel modelo;
     
+    
     public tablaRouter(int n,int[][] distancias, int[][] saltos) {
         this.distancias = distancias;
         this.saltos = saltos;
@@ -33,6 +34,7 @@ public class tablaRouter extends javax.swing.JFrame {
         modelo.addColumn("Siguiente salto");
         jTable1.setModel(modelo);
         this.MostrarTabla(n);
+        this.setLocationRelativeTo(null);
     }
     
     public void MostrarTabla(int n){
@@ -63,6 +65,9 @@ public class tablaRouter extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+
+        setTitle("Tabla de Enrutamiento");
+        setResizable(false);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

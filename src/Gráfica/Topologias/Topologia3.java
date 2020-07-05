@@ -99,6 +99,7 @@ public class Topologia3 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Topología 3");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         router3.setToolTipText("");
