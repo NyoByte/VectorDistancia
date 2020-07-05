@@ -21,11 +21,13 @@ public class TablaEnrutamientoRouter extends javax.swing.JFrame {
     private int router = 0;
     private int tam;
     DefaultTableModel modelo;
+    
     public TablaEnrutamientoRouter(int[][] distancias, int[][] saltos) {
         this.distancias = distancias;
         this.saltos = saltos;
         this.tam = distancias.length;
         initComponents();
+        this.setLocationRelativeTo(null);
         modelo = new DefaultTableModel();
         modelo.addColumn("Hacia router");
         modelo.addColumn("Distancia");
@@ -65,7 +67,8 @@ public class TablaEnrutamientoRouter extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         tagRouter = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Tablas de enrutamiento");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

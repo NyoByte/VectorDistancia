@@ -133,12 +133,13 @@ public class Topologia1 extends javax.swing.JFrame {
         router7 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         topología1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Button_Back = new javax.swing.JButton();
+        Button_Mostrar = new javax.swing.JButton();
         siguiente = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         router1.setBackground(new java.awt.Color(255, 255, 255));
@@ -162,21 +163,21 @@ public class Topologia1 extends javax.swing.JFrame {
         getContentPane().add(topología1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 670, 430));
         topología1.getAccessibleContext().setAccessibleName("topología1");
 
-        jButton2.setText("Volver al menu principal");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Button_Back.setText("Volver al menu principal");
+        Button_Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Button_BackActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 210, -1));
+        getContentPane().add(Button_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 210, 30));
 
-        jButton1.setText("crear Tabla de Enrutamiento");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Button_Mostrar.setText("Mostrar Tabla de Enrutamiento");
+        Button_Mostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Button_MostrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, 210, 30));
+        getContentPane().add(Button_Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, 210, 30));
 
         siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/siguiente.png"))); // NOI18N
         siguiente.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +218,7 @@ public class Topologia1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_router1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void Button_MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_MostrarActionPerformed
 //está función existe con el fin de mostrar la tabla de enrutamiento  
         grafo = new Grafo(8);
         grafo.agregarLado(0, 1, 4);
@@ -231,25 +232,20 @@ public class Topologia1 extends javax.swing.JFrame {
         grafo.agregarLado(5, 7, 2);
         grafo.agregarLado(7, 6, 2);
         
-        
-        //grafo.mostrarLados();
         VectorDistancia vt = new VectorDistancia(grafo);
-        
         vt.inicializarMatrices();
         vt.ejecutarVector();
         TablaEnrutamientoRouter ventana = new TablaEnrutamientoRouter(vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
         ventana.setVisible(true);
-//se crea un grao y se pone de parametro 8 ya que serán 8 routers
-    
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+//se crea un grafo y se pone de parametro 8 ya que serán 8 routers  
+    }//GEN-LAST:event_Button_MostrarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        ScreenMain menu = new ScreenMain();
-           menu.setVisible(true);
-           this.dispose();
+    private void Button_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_BackActionPerformed
+        TopologiasPrecargadas TP = new TopologiasPrecargadas();
+        TP.setVisible(true);
+        this.dispose();
                          
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_Button_BackActionPerformed
 
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteActionPerformed
            Topologia2 topo2 = new Topologia2();
@@ -296,8 +292,8 @@ public class Topologia1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton Button_Back;
+    private javax.swing.JButton Button_Mostrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton router1;

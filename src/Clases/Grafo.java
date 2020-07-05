@@ -1,9 +1,5 @@
 package Clases;
 
-import Gráfica.ScreenMain;
-import java.util.Scanner;
-import javax.swing.JOptionPane;
-
 public class Grafo {
     private int n; //numero de vertices
     private Nodo[] listaAdy;
