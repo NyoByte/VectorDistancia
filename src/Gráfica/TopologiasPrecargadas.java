@@ -81,7 +81,7 @@ public class TopologiasPrecargadas extends javax.swing.JFrame {
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Topologías Precargadas By.Nyo");
+        setTitle("Topologías Precargadas");
         setBackground(new java.awt.Color(153, 153, 255));
         setLocation(new java.awt.Point(600, 200));
         setResizable(false);
@@ -89,6 +89,8 @@ public class TopologiasPrecargadas extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Button_TPrecargada.setText("Topología Precargada");
+        Button_TPrecargada.setEnabled(false);
+        Button_TPrecargada.setSelected(true);
         Button_TPrecargada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_TPrecargadaActionPerformed(evt);
