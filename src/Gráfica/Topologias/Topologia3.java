@@ -91,12 +91,12 @@ public class Topologia3 extends javax.swing.JFrame {
         router6 = new javax.swing.JButton();
         router5 = new javax.swing.JButton();
         router4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         topología3 = new javax.swing.JLabel();
         Button_Back = new javax.swing.JButton();
         Button_Mostrar = new javax.swing.JButton();
         anterior = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel_Titulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Topología 3");
@@ -157,10 +157,6 @@ public class Topologia3 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(router4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 70, 80));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Topología3");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 0, -1, -1));
         getContentPane().add(topología3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 710, 470));
 
         Button_Back.setText("Volver al menu principal");
@@ -169,7 +165,7 @@ public class Topologia3 extends javax.swing.JFrame {
                 Button_BackActionPerformed(evt);
             }
         });
-        getContentPane().add(Button_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 210, 210, -1));
+        getContentPane().add(Button_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, 210, -1));
 
         Button_Mostrar.setText("Mostrar Tabla de Enrutamiento");
         Button_Mostrar.addActionListener(new java.awt.event.ActionListener() {
@@ -177,7 +173,7 @@ public class Topologia3 extends javax.swing.JFrame {
                 Button_MostrarActionPerformed(evt);
             }
         });
-        getContentPane().add(Button_Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, 210, 30));
+        getContentPane().add(Button_Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 210, 30));
 
         anterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/anterior.png"))); // NOI18N
         anterior.addActionListener(new java.awt.event.ActionListener() {
@@ -185,10 +181,15 @@ public class Topologia3 extends javax.swing.JFrame {
                 anteriorActionPerformed(evt);
             }
         });
-        getContentPane().add(anterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 320, 70, 60));
+        getContentPane().add(anterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 320, 70, 60));
 
         jLabel3.setText("Topología 2");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 390, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 390, -1, -1));
+
+        jLabel_Titulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel_Titulo.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel_Titulo.setText("Topología 3");
+        getContentPane().add(jLabel_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 110, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -309,8 +310,8 @@ public class Topologia3 extends javax.swing.JFrame {
     private javax.swing.JButton Button_Back;
     private javax.swing.JButton Button_Mostrar;
     private javax.swing.JButton anterior;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel_Titulo;
     private javax.swing.JButton router0;
     private javax.swing.JButton router1;
     private javax.swing.JButton router2;

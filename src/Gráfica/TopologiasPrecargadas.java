@@ -152,7 +152,7 @@ public class TopologiasPrecargadas extends javax.swing.JFrame {
 
         jLabel_Titulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel_Titulo.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel_Titulo.setText("Redes de Computadoras 2010-1  ");
+        jLabel_Titulo.setText("Redes de Computadoras 2020-1  ");
         getContentPane().add(jLabel_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 300, 20));
 
         jLabel_Subtitulo.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
@@ -160,17 +160,17 @@ public class TopologiasPrecargadas extends javax.swing.JFrame {
         getContentPane().add(jLabel_Subtitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 110, -1));
 
         jLabel_Univ.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel_Univ.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel_Univ.setForeground(new java.awt.Color(255, 118, 19));
         jLabel_Univ.setText("Universidad de Lima ");
         getContentPane().add(jLabel_Univ, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 900, -1, -1));
 
-        jLabel_Profesor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel_Profesor.setForeground(new java.awt.Color(0, 207, 28));
+        jLabel_Profesor.setFont(new java.awt.Font("Tahoma", 3, 13)); // NOI18N
+        jLabel_Profesor.setForeground(new java.awt.Color(0, 126, 74));
         jLabel_Profesor.setText("Profesor : Sotelo Monge, Marco Antonio");
         getContentPane().add(jLabel_Profesor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 940, -1, -1));
 
-        jLabel_Seccion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel_Seccion.setForeground(new java.awt.Color(0, 207, 28));
+        jLabel_Seccion.setFont(new java.awt.Font("Tahoma", 3, 13)); // NOI18N
+        jLabel_Seccion.setForeground(new java.awt.Color(0, 126, 74));
         jLabel_Seccion.setText("Sección : 602");
         getContentPane().add(jLabel_Seccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 940, -1, -1));
 
@@ -211,7 +211,6 @@ public class TopologiasPrecargadas extends javax.swing.JFrame {
     }//GEN-LAST:event_Button_TManualActionPerformed
 
     private void topologia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_topologia1ActionPerformed
-
         //nos ayuda a ir a la ventana de, en este caso, topologiá
         Topologia1 topo1 = new Topologia1();
         topo1.setVisible(true);

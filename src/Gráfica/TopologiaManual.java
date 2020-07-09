@@ -133,7 +133,7 @@ public class TopologiaManual extends javax.swing.JFrame {
         TextIntegrantes.setEditable(false);
         TextIntegrantes.setBackground(new java.awt.Color(204, 204, 255));
         TextIntegrantes.setColumns(12);
-        TextIntegrantes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        TextIntegrantes.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
         TextIntegrantes.setRows(5);
         TextIntegrantes.setText("Integrantes:\n- Claudia Barrera\n- Gabriel Carmelo\n- Andy Lazo\n- Roger Vega");
         TextIntegrantes.setToolTipText("");
@@ -157,15 +157,15 @@ public class TopologiaManual extends javax.swing.JFrame {
         });
 
         jLabel_Univ.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel_Univ.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel_Univ.setForeground(new java.awt.Color(255, 118, 19));
         jLabel_Univ.setText("Universidad de Lima ");
 
-        jLabel_Profesor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel_Profesor.setForeground(new java.awt.Color(0, 207, 28));
+        jLabel_Profesor.setFont(new java.awt.Font("Tahoma", 3, 13)); // NOI18N
+        jLabel_Profesor.setForeground(new java.awt.Color(0, 126, 74));
         jLabel_Profesor.setText("Profesor : Sotelo Monge, Marco Antonio");
 
-        jLabel_Seccion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel_Seccion.setForeground(new java.awt.Color(0, 207, 28));
+        jLabel_Seccion.setFont(new java.awt.Font("Tahoma", 3, 13)); // NOI18N
+        jLabel_Seccion.setForeground(new java.awt.Color(0, 126, 74));
         jLabel_Seccion.setText("Sección : 602");
 
         jLabel_Titulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -189,48 +189,46 @@ public class TopologiaManual extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel_Profesor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel_Seccion))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Button_Añadir)
-                        .addGap(20, 20, 20)
-                        .addComponent(Button_Limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                        .addComponent(Button_Ejecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(87, 87, 87)
-                                .addComponent(jLabel_Univ))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(115, 115, 115)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cantRouter, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(Button_TManual)
-                                .addGap(0, 0, 0)
-                                .addComponent(Button_TPrecargada))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(67, 67, 67)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(69, 69, 69)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel_Subtitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
                 .addGap(125, 125, 125)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Button_Añadir)
+                .addGap(20, 20, 20)
+                .addComponent(Button_Limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addComponent(Button_Ejecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jLabel_Univ))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cantRouter, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Button_TManual)
+                        .addGap(0, 0, 0)
+                        .addComponent(Button_TPrecargada))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(69, 69, 69)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel_Subtitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel_Profesor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel_Seccion, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,8 +320,13 @@ public class TopologiaManual extends javax.swing.JFrame {
                 int r2 = Integer.parseInt(r2t.getText());
                 int peso = Integer.parseInt(pesot.getText());
                 if ((r1>=0 && r1<=cantR-1) && (r2>=0 && r2<=cantR-1) && (peso>0 && peso<=999)) {
-                    grafo.agregarLado(r1, r2, peso);
-                    System.out.println("Ingreso exitoso: ("+r1+" -"+peso+"- "+r2+")");
+                    if(grafo.existeLado(r1, r2, peso)==false || grafo.existeLado(r2, r1, peso)==false){
+                        grafo.agregarLado(r1, r2, peso);
+                        System.out.println("Ingreso exitoso: ("+r1+" -"+peso+"- "+r2+")");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Enlace ya existente ");
+                        System.out.println("Enlace ya existente ("+r1+" -"+peso+"- "+r2+")");
+                    }
                 } else {
                     System.out.println("Ingreso fallido");
                     JOptionPane.showMessageDialog(null, "Número máximo de router "+cantR);

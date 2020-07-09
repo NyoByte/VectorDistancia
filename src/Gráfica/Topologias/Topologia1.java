@@ -39,8 +39,7 @@ public class Topologia1 extends javax.swing.JFrame {
         grafo.agregarLado(7, 6, 2);
         vt = new VectorDistancia(grafo); 
         vt.inicializarMatrices();
-        vt.ejecutarVector();
-        
+        vt.ejecutarVector();     
         /*este codigo es usado para importar una imagen y almacenarlo en una 
         variable jlabel*/
         ImageIcon imagen = new ImageIcon(getClass().getResource("/imagenes/topología1.JPG"));
@@ -82,49 +81,6 @@ public class Topologia1 extends javax.swing.JFrame {
         siguiente.getHeight(), Image.SCALE_DEFAULT));
         siguiente.setIcon(icono_siguiente);
     }
-    
-    
-    
-
-
-   /* public Topologia1(int[][] distancias, int[][] saltos) {
-        this.distancias = distancias;
-        this.saltos = saltos;
-        this.tam = distancias.length;
-        initComponents();
-        modelo = new DefaultTableModel();
-        modelo.addColumn("Hacia router");
-        modelo.addColumn("Distancia");
-        modelo.addColumn("Siguiente salto");
-        jTable1.setModel(modelo);
-        this.llenarTabla();
-    }*/
-    
-    /*public void llenarTabla(int num, int[][] distancias, int[][] saltos){
-         this.distancias = distancias;
-        this.saltos = saltos;
-        this.tam = distancias.length;
-        initComponents();
-        modelo = new DefaultTableModel();
-        modelo.addColumn("Hacia router");
-        modelo.addColumn("Distancia");
-        modelo.addColumn("Siguiente salto");
-        jTable1.setModel(modelo);
-        System.out.println(modelo.getRowCount());
-        while(modelo.getRowCount()>0){
-            modelo.removeRow(0);
-            System.out.println(modelo.getRowCount());
-        }
-        String[] fila = new String[3];
-        
-            fila[0] = String.valueOf(num);
-            fila[1] = String.valueOf(distancias[router][num]);
-            fila[2] = String.valueOf(saltos[router][num]);
-            modelo.addRow(fila);
-        
-        this.jTable1.setModel(modelo);
-    }*/
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -142,12 +98,12 @@ public class Topologia1 extends javax.swing.JFrame {
         router7 = new javax.swing.JButton();
         router3 = new javax.swing.JButton();
         router6 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         topología1 = new javax.swing.JLabel();
         Button_Back = new javax.swing.JButton();
         Button_Mostrar = new javax.swing.JButton();
         siguiente = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel_Titulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Topología 1");
@@ -210,11 +166,7 @@ public class Topologia1 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(router6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 90, 60));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Topologia 1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 0, -1, -1));
-        getContentPane().add(topología1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 670, 430));
+        getContentPane().add(topología1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 670, 430));
         topología1.getAccessibleContext().setAccessibleName("topología1");
 
         Button_Back.setText("Volver al menu principal");
@@ -223,7 +175,7 @@ public class Topologia1 extends javax.swing.JFrame {
                 Button_BackActionPerformed(evt);
             }
         });
-        getContentPane().add(Button_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 210, 30));
+        getContentPane().add(Button_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, 210, 30));
 
         Button_Mostrar.setText("Mostrar Tabla de Enrutamiento");
         Button_Mostrar.addActionListener(new java.awt.event.ActionListener() {
@@ -231,7 +183,7 @@ public class Topologia1 extends javax.swing.JFrame {
                 Button_MostrarActionPerformed(evt);
             }
         });
-        getContentPane().add(Button_Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, 210, 30));
+        getContentPane().add(Button_Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 240, 210, 30));
 
         siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/siguiente.png"))); // NOI18N
         siguiente.addActionListener(new java.awt.event.ActionListener() {
@@ -239,10 +191,15 @@ public class Topologia1 extends javax.swing.JFrame {
                 siguienteActionPerformed(evt);
             }
         });
-        getContentPane().add(siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 320, 60, 60));
+        getContentPane().add(siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 320, 60, 60));
 
         jLabel2.setText("Topología 2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 400, -1, -1));
+
+        jLabel_Titulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel_Titulo.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel_Titulo.setText("Topología 1");
+        getContentPane().add(jLabel_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 110, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -254,10 +211,10 @@ public class Topologia1 extends javax.swing.JFrame {
     }//GEN-LAST:event_router0ActionPerformed
 
     private void Button_MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_MostrarActionPerformed
-//está función existe con el fin de mostrar la tabla de enrutamiento  
+    //está función existe con el fin de mostrar la tabla de enrutamiento  
         TablaEnrutamientoRouter ventana = new TablaEnrutamientoRouter(vt.getMatrizDistancia(),vt.getMatrizSgteSalto());
         ventana.setVisible(true);
-//se crea un grafo y se pone de parametro 8 ya que serán 8 routers  
+    //se crea un grafo y se pone de parametro 8 ya que serán 8 routers  
     }//GEN-LAST:event_Button_MostrarActionPerformed
 
     private void Button_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_BackActionPerformed
@@ -349,8 +306,8 @@ public class Topologia1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_Back;
     private javax.swing.JButton Button_Mostrar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel_Titulo;
     private javax.swing.JButton router0;
     private javax.swing.JButton router1;
     private javax.swing.JButton router2;
