@@ -320,7 +320,7 @@ public class TopologiaManual extends javax.swing.JFrame {
                 int r2 = Integer.parseInt(r2t.getText());
                 int peso = Integer.parseInt(pesot.getText());
                 if ((r1>=0 && r1<=cantR-1) && (r2>=0 && r2<=cantR-1) && (peso>0 && peso<=999)) {
-                    if(grafo.existeLado(r1, r2, peso)==false || grafo.existeLado(r2, r1, peso)==false){
+                    if(grafo.existeLado(r1, r2)==false && grafo.existeLado(r2, r1)==false){
                         grafo.agregarLado(r1, r2, peso);
                         System.out.println("Ingreso exitoso: ("+r1+" -"+peso+"- "+r2+")");
                     }else{

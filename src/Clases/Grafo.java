@@ -31,11 +31,46 @@ public class Grafo {
         }
         return temp;
     }
-  
-    public boolean existeLado(int x, int y, int peso){
+    
+      /*
+        public boolean hayVertice(Vertice x) {
+        if (esVacio() || x == null) {
+            return false;
+        } else {
+            if (vertice.getItem().equals(x.getItem())) {
+                return true;
+            } else {
+                return subGrafo.hayVertice(x);
+            }
+        }
+    }
+
+    public boolean hayArco(Vertice origen, Vertice destino) {
+        if(hayVertice(origen) && hayVertice(destino)){
+            if (vertice.getItem().equals(origen.getItem())) {
+                return lista.ExisteItem(destino);
+            } else {
+                if (subGrafo != null) {
+                    subGrafo.hayArco(origen, destino);
+                }
+            }
+        }
+        return false;
+    }
+    
+    public boolean existeItem(int item){
+        for(int i=1;i<=Longitud();i++){
+            if(Iesimo(i).toString().equals(item.toString())){    
+                return true;
+            }
+        }
+        return false;
+    }*/
+    
+    public boolean existeLado(int x, int y){
         Nodo aux = listaAdy[x];
         while(aux!=null){
-            if(aux.getOrigen()==x){
+            if(aux.getDestino()==y){
                 return true;
             }
             aux = aux.getSig();
