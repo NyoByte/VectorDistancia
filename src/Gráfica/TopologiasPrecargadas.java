@@ -110,7 +110,7 @@ public class TopologiasPrecargadas extends javax.swing.JFrame {
 
         topologia1.setBackground(new java.awt.Color(0, 153, 255));
         topologia1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        topologia1.setText("Topologia1");
+        topologia1.setText("Topología 1");
         topologia1.setMaximumSize(new java.awt.Dimension(140, 30));
         topologia1.setMinimumSize(new java.awt.Dimension(140, 30));
         topologia1.setPreferredSize(new java.awt.Dimension(140, 30));
@@ -123,7 +123,7 @@ public class TopologiasPrecargadas extends javax.swing.JFrame {
 
         topologia2.setBackground(new java.awt.Color(0, 153, 255));
         topologia2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        topologia2.setText("Topologia2");
+        topologia2.setText("Topología 2");
         topologia2.setMaximumSize(new java.awt.Dimension(140, 30));
         topologia2.setMinimumSize(new java.awt.Dimension(140, 30));
         topologia2.setPreferredSize(new java.awt.Dimension(140, 30));
@@ -136,7 +136,7 @@ public class TopologiasPrecargadas extends javax.swing.JFrame {
 
         topologia3.setBackground(new java.awt.Color(0, 153, 255));
         topologia3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        topologia3.setText("Topologia3");
+        topologia3.setText("Topología 3");
         topologia3.setMaximumSize(new java.awt.Dimension(140, 30));
         topologia3.setMinimumSize(new java.awt.Dimension(140, 30));
         topologia3.setPreferredSize(new java.awt.Dimension(140, 30));

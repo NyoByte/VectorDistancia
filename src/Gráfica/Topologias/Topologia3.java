@@ -159,7 +159,7 @@ public class Topologia3 extends javax.swing.JFrame {
         getContentPane().add(router4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 70, 80));
         getContentPane().add(topología3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 710, 470));
 
-        Button_Back.setText("Volver al menu principal");
+        Button_Back.setText("Volver al menú principal");
         Button_Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_BackActionPerformed(evt);

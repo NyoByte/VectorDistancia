@@ -3,18 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/src/Gráfica/Topologias/TablaEnrutamientoRouter.java</file>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/src/Clases/VectorDistancia.java</file>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/.gitignore</file>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/nbproject/private/private.xml</file>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/src/Gráfica/Topologias/Topologia3.java</file>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/src/Clases/Grafo.java</file>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/src/Gráfica/TopologiasPrecargadas.java</file>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/nbproject/private/private.properties</file>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/src/Test/Prueba.java</file>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/src/Gráfica/Topologias/Topologia2.java</file>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/src/Gráfica/TopologiaManual.java</file>
-            <file>file:/C:/Users/vgabr/Documents/6to%20ciclo/Redes%20de%20computadoras/VectorDistancia/src/Gráfica/Topologias/Topologia1.java</file>
+            <file>file:/Users/claudia/NetBeansProjects/VectorDistancia/src/Test/Prueba.java</file>
+            <file>file:/Users/claudia/NetBeansProjects/VectorDistancia/src/Gráfica/TopologiasPrecargadas.java</file>
+            <file>file:/Users/claudia/NetBeansProjects/VectorDistancia/src/Gráfica/TopologiaManual.java</file>
+            <file>file:/Users/claudia/NetBeansProjects/VectorDistancia/src/Gráfica/Topologias/Topologia1.java</file>
+            <file>file:/Users/claudia/NetBeansProjects/VectorDistancia/src/Gráfica/Topologias/Topologia3.java</file>
+            <file>file:/Users/claudia/NetBeansProjects/VectorDistancia/src/Gráfica/Topologias/TablaEnrutamientoRouter.java</file>
         </group>
     </open-files>
 </project-private>
