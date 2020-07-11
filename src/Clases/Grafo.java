@@ -15,11 +15,12 @@ public class Grafo {
         temp.setSig(listaAdy[x]);
         listaAdy[x] = temp;
         
+        
         Nodo temp2 = new Nodo(y, x, peso);
         temp2.setSig(listaAdy[y]);
         listaAdy[y] = temp2;
     }
-
+    
     public Nodo obtenerLado(int x, int y){
         Nodo temp = listaAdy[x];
         while(temp != null){
@@ -29,6 +30,52 @@ public class Grafo {
             temp = temp.getSig();
         }
         return temp;
+    }
+    
+      /*
+        public boolean hayVertice(Vertice x) {
+        if (esVacio() || x == null) {
+            return false;
+        } else {
+            if (vertice.getItem().equals(x.getItem())) {
+                return true;
+            } else {
+                return subGrafo.hayVertice(x);
+            }
+        }
+    }
+
+    public boolean hayArco(Vertice origen, Vertice destino) {
+        if(hayVertice(origen) && hayVertice(destino)){
+            if (vertice.getItem().equals(origen.getItem())) {
+                return lista.ExisteItem(destino);
+            } else {
+                if (subGrafo != null) {
+                    subGrafo.hayArco(origen, destino);
+                }
+            }
+        }
+        return false;
+    }
+    
+    public boolean existeItem(int item){
+        for(int i=1;i<=Longitud();i++){
+            if(Iesimo(i).toString().equals(item.toString())){    
+                return true;
+            }
+        }
+        return false;
+    }*/
+    
+    public boolean existeLado(int x, int y){
+        Nodo aux = listaAdy[x];
+        while(aux!=null){
+            if(aux.getDestino()==y){
+                return true;
+            }
+            aux = aux.getSig();
+        }
+        return false;
     }
 
     public void mostrarLados(){

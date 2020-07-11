@@ -46,9 +46,7 @@ public class TablaEnrutamientoRouter extends javax.swing.JFrame {
             if(distancias[router][i] == 1000){
                 fila[1] = "∞";
             }else fila[1] = String.valueOf(distancias[router][i]);
-            if(saltos[router][i]== -1){
-                fila[2] = "-";
-            }else fila[2] = String.valueOf(saltos[router][i]);
+            fila[2] = String.valueOf(saltos[router][i]);
             modelo.addRow(fila);
         }
         this.jTable1.setModel(modelo);
