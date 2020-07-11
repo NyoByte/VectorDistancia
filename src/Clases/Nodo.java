@@ -1,10 +1,21 @@
 package Clases;
 
+/**
+ * 
+ * Esta clase pretende construir un nodo que representa un enlace en la topologia
+ * @author vgabr
+ */
 public class Nodo {
     private int origen, destino;
     private int peso;
     private Nodo sig;
 
+    /**
+     * Metodo constructor
+     * @param x Router origen del enlace
+     * @param y Router destino del enlace
+     * @param peso Peso del enlace
+     */
     public Nodo(int x, int y, int peso){
        this.origen = x;
        this.destino = y;

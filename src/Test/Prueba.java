@@ -1,7 +1,6 @@
 package Test;
 
 import Clases.*;
-import ClasesNyo.*;
 import Gráfica.*;
 import java.util.Scanner;
 
