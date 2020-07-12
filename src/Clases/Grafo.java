@@ -21,6 +21,16 @@ public class Grafo {
      * @param y Router destino del enlace
      * @param peso Peso del enlace
      */
+    
+    public boolean hayRoutersSinConex(){
+        for(Nodo router: this.listaAdy){
+            if(router == null){
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public void agregarLado(int x, int y, int peso){
         Nodo temp = new Nodo(x, y, peso);
         temp.setSig(listaAdy[x]);

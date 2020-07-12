@@ -42,13 +42,13 @@ public class TablaEnrutamientoRouter extends javax.swing.JFrame {
         }
         String[] fila = new String[3];
         for(int i=0; i<tam; i++){
-            fila[0] = "Router " + String.valueOf(i);
+            fila[0] = "R" + String.valueOf(i);
             if(distancias[router][i] == 1000){
                 fila[1] = "∞";
             }else fila[1] = String.valueOf(distancias[router][i]);
             if(saltos[router][i] == -1){
                 fila[2] = "-";
-            }else fila[2] = "Router " + String.valueOf(saltos[router][i]);
+            }else fila[2] = "R" + String.valueOf(saltos[router][i]);
             modelo.addRow(fila);
         }
         this.jTable1.setModel(modelo);

@@ -307,7 +307,7 @@ public class TopologiaManual extends javax.swing.JFrame {
         JTextField r2t = new JTextField();
         JTextField pesot = new JTextField();
         Object[] message = {
-            "Ingrese los siguientes valores:\n\n",
+            "Ingrese los siguientes valores:\n(Router min 0, max n-1)\n\n",
             "",
             "Desde router: ", r1t,
             "Hacia router: ", r2t,
@@ -319,6 +319,9 @@ public class TopologiaManual extends javax.swing.JFrame {
                 int r1 = Integer.parseInt(r1t.getText());
                 int r2 = Integer.parseInt(r2t.getText());
                 int peso = Integer.parseInt(pesot.getText());
+                if(r1==r2){
+                    JOptionPane.showMessageDialog(null, "No se puede conectar un router consigo mismo.");
+                }
                 if ((r1>=0 && r1<=cantR-1) && (r2>=0 && r2<=cantR-1) && (peso>0 && peso<=999)) {
                     if(grafo.existeLado(r1, r2)==false && grafo.existeLado(r2, r1)==false){
                         grafo.agregarLado(r1, r2, peso);
@@ -354,8 +357,12 @@ public class TopologiaManual extends javax.swing.JFrame {
         vd.inicializarMatrices();
         vd.ejecutarVector();
         System.out.println("-------------------------");
-        TablaEnrutamientoRouter ventanaTabla = new TablaEnrutamientoRouter(vd.getMatrizDistancia(),vd.getMatrizSgteSalto());
-        ventanaTabla.setVisible(true);
+        if(!vd.hayRoutersSinConex()){
+            TablaEnrutamientoRouter ventanaTabla = new TablaEnrutamientoRouter(vd.getMatrizDistancia(),vd.getMatrizSgteSalto());
+            ventanaTabla.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "Hay routers sin conexion");
+        }
     }//GEN-LAST:event_Button_EjecutarActionPerformed
 
     private void cantRouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantRouterActionPerformed

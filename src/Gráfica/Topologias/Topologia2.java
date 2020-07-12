@@ -111,6 +111,8 @@ public class Topologia2 extends javax.swing.JFrame {
         anterior = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel_Titulo = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Topología 2");
@@ -215,6 +217,20 @@ public class Topologia2 extends javax.swing.JFrame {
         jLabel_Titulo.setForeground(new java.awt.Color(51, 51, 255));
         jLabel_Titulo.setText("Topología 2");
         getContentPane().add(jLabel_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 110, 20));
+
+        jScrollPane1.setBackground(new java.awt.Color(204, 204, 204));
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setFocusable(false);
+
+        jTextArea2.setEditable(false);
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Haga clic en cualquier\nrouter para mostrar\nsu tabla de enrutamiento\n");
+        jTextArea2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextArea2.setEnabled(false);
+        jScrollPane1.setViewportView(jTextArea2);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, 200, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -333,6 +349,8 @@ public class Topologia2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel_Titulo;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JButton router0;
     private javax.swing.JButton router1;
     private javax.swing.JButton router2;

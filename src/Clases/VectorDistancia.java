@@ -105,5 +105,9 @@ public class VectorDistancia {
         return n;
     }
     
+    public boolean hayRoutersSinConex(){
+        return this.grafo.hayRoutersSinConex();
+    }
+    
     
 }
