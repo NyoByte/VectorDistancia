@@ -1,8 +1,6 @@
 .idea
 VectorDistancia.iml
 out/
-/dist/
 build/
-dist/
 nbdist/
 .nb-gradle/
