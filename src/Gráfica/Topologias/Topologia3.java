@@ -198,8 +198,8 @@ public class Topologia3 extends javax.swing.JFrame {
         jScrollPane1.setFocusable(false);
 
         jTextArea3.setEditable(false);
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
+        jTextArea3.setColumns(5);
+        jTextArea3.setRows(4);
         jTextArea3.setText("Haga clic en cualquier\nrouter para mostrar\nsu tabla de enrutamiento\n");
         jTextArea3.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextArea3.setEnabled(false);

@@ -223,8 +223,8 @@ public class Topologia2 extends javax.swing.JFrame {
         jScrollPane1.setFocusable(false);
 
         jTextArea2.setEditable(false);
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
+        jTextArea2.setColumns(5);
+        jTextArea2.setRows(4);
         jTextArea2.setText("Haga clic en cualquier\nrouter para mostrar\nsu tabla de enrutamiento\n");
         jTextArea2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextArea2.setEnabled(false);

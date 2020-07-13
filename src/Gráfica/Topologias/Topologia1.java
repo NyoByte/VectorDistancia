@@ -208,14 +208,14 @@ public class Topologia1 extends javax.swing.JFrame {
         jScrollPane1.setFocusable(false);
 
         jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
+        jTextArea1.setColumns(5);
+        jTextArea1.setRows(4);
         jTextArea1.setText("Haga clic en cualquier\nrouter para mostrar\nsu tabla de enrutamiento\n");
         jTextArea1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextArea1.setEnabled(false);
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 200, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 200, 80));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
