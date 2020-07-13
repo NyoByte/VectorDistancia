@@ -320,9 +320,10 @@ public class TopologiaManual extends javax.swing.JFrame {
                 int r2 = Integer.parseInt(r2t.getText());
                 int peso = Integer.parseInt(pesot.getText());
                 if(r1==r2){
-                    JOptionPane.showMessageDialog(null, "No se puede conectar un router consigo mismo.");
-                }
-                if ((r1>=0 && r1<=cantR-1) && (r2>=0 && r2<=cantR-1) && (peso>0 && peso<=999)) {
+                    JOptionPane.showMessageDialog(null, "No se puede conectar un router consigo mismo");
+                }else if(peso<0){
+                    JOptionPane.showMessageDialog(null, "No puede ver pesos negativos");
+                }else if ((r1>=0 && r1<=cantR-1) && (r2>=0 && r2<=cantR-1) && (peso>0 && peso<=999)) {
                     if(grafo.existeLado(r1, r2)==false && grafo.existeLado(r2, r1)==false){
                         grafo.agregarLado(r1, r2, peso);
                         System.out.println("Ingreso exitoso: ("+r1+" -"+peso+"- "+r2+")");
@@ -350,13 +351,10 @@ public class TopologiaManual extends javax.swing.JFrame {
     }//GEN-LAST:event_Button_AñadirKeyTyped
 
     private void Button_EjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_EjecutarActionPerformed
-        System.out.println("-------------------------");
-        System.out.println("Enlace Peso");
-        grafo.mostrarLados();
+        //grafo.mostrarLados();
         VectorDistancia vd = new VectorDistancia(grafo);
         vd.inicializarMatrices();
         vd.ejecutarVector();
-        System.out.println("-------------------------");
         if(!vd.hayRoutersSinConex()){
             TablaEnrutamientoRouter ventanaTabla = new TablaEnrutamientoRouter(vd.getMatrizDistancia(),vd.getMatrizSgteSalto());
             ventanaTabla.setVisible(true);
