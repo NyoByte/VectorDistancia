@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"Clases"},{"l":"Gráfica"},{"l":"Gráfica.Topologias"},{"l":"Test"}]
